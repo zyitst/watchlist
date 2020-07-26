@@ -4,4 +4,5 @@ __pycache__
 .DS_Store
 env/
 .env
-.idea
+**/.idea/workspace.xml
+**/.idea/tasks.xml
