@@ -10,15 +10,23 @@
     {% endblock %}
 </head>
 <body>
+    <!-- 插入到页面标题上方 -->
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+
     <h2>
         <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
         {{ user.name }}'s Watchlist
     </h2>
+
     <nav>
         <ul><li><a href="{{ url_for('index') }}">Home</a></li></ul>
     </nav>
+
     {% block content %}
     {% endblock %}
+
     <footer><small>&copy; 2020 <a href="http://helloflask.com/tutorial">HelloFlask</a></small></footer>
 </body>
 </html>
